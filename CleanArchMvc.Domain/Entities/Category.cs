@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchMvc.Domain.Entities
 {
-    internal sealed class Category : Entity
+    public sealed class Category : Entity
     {
         public string name { get; private set; }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchMvc.Domain.Entities
 {
-    internal sealed class Product: Entity
+    public sealed class Product: Entity
     {
         public string name { get; private set; }
         public string description { get; private set; }
