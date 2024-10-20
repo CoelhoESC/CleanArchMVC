@@ -71,6 +71,26 @@ namespace CleanArchMvc.Domain.Test
 
         }
 
+        [Fact(DisplayName = "Criando um Produto com image null")]
+        public void CreatProduct_NullImageName_DomainException()
+        {
+            Action action = () => new Product(1, "Name", "Description", 99, 10, null);
+            action.Should()
+                .NotThrow<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
+
+        }
+
+        [Fact(DisplayName = "Criando um Produto com image null com NullException")]
+        public void CreatProduct_NullImageName_NullReferenceException()
+        {
+            Action action = () => new Product(1, "Name", "Description", 99, 10, null);
+            action.Should()
+                .NotThrow<NullReferenceException>();
+
+        }
+
+
+
         [Fact(DisplayName = "Criando um Produto com preço negativo")]
         public void CreatProduct_ValueMegativePrice()
         {
